@@ -20,7 +20,7 @@ import java.util.Map;
  * @since 2021-07-06
  *************************************************************************/
 @RestController
-@RequestMapping("/api/status")
+@RequestMapping("/api/location")
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 @CrossOrigin(origins = "*", maxAge = 3600)
 public class LocationController {
