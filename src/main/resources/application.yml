@@ -1,0 +1,23 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: travel-agency
+
+  servlet:
+    multipart:
+      enabled: true
+      file-size-threshold: 2KB
+      max-file-size: 25MB
+      max-request-size: 30MB
+
+
+
+  ## Jackson binding config
+  jackson:
+    serialization:
+      fail-on-empty-beans: false
+
+## File Storage Properties
+file:
+  upload-dir: ./uploads
