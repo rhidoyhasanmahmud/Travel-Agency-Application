@@ -1,4 +1,4 @@
-package com.travelagency.travelagency.service;
+package com.travelagency.service;
 
 public class StatusService {
 }

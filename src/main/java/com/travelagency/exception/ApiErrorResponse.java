@@ -1,4 +1,4 @@
-package com.travelagency.travelagency.exception;
+package com.travelagency.exception;
 
 import org.springframework.http.HttpStatus;
 

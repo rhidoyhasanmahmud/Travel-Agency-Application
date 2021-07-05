@@ -1,7 +1,7 @@
-package com.travelagency.travelagency.controller;
+package com.travelagency.controller;
 
-import com.travelagency.travelagency.model.Location;
-import com.travelagency.travelagency.service.LocationService;
+import com.travelagency.model.Location;
+import com.travelagency.service.LocationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;

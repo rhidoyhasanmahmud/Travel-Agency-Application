@@ -1,7 +1,7 @@
-package com.travelagency.travelagency.controller;
+package com.travelagency.controller;
 
-import com.travelagency.travelagency.model.Status;
-import com.travelagency.travelagency.service.StatusService;
+import com.travelagency.model.Status;
+import com.travelagency.service.StatusService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;

@@ -1,7 +1,7 @@
-package com.travelagency.travelagency.service;
+package com.travelagency.service;
 
-import com.travelagency.travelagency.model.Location;
-import com.travelagency.travelagency.model.LocationRepo;
+import com.travelagency.model.Location;
+import com.travelagency.model.LocationRepo;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

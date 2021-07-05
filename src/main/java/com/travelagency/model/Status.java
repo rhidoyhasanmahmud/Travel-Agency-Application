@@ -1,4 +1,4 @@
-package com.travelagency.travelagency.model;
+package com.travelagency.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
