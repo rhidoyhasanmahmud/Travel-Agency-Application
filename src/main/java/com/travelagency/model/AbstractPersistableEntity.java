@@ -34,9 +34,6 @@ public class AbstractPersistableEntity implements Serializable {
     @Setter(value = AccessLevel.PRIVATE)
     private LocalDateTime updatedAt;
 
-    @Column(nullable = false)
-    private boolean isActive = true;
-
     @PrePersist
     void onInsert() {
         createdAt = LocalDateTime.now();

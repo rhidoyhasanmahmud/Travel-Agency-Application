@@ -28,4 +28,7 @@ public class Location extends AbstractPersistableEntity {
     @Column(nullable = false, unique = true)
     @NotNull
     private String name;
+
+    @Column(nullable = false)
+    private boolean isActive = true;
 }
