@@ -36,7 +36,7 @@ public class User extends AbstractPersistableEntity {
     @Convert(converter = StringTrimConverter.class)
     @Column(nullable = false)
     @NotNull
-    private String userName;
+    private String name;
 
     private String password;
 

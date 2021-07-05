@@ -43,9 +43,9 @@ public class StatusController {
      * @param page
      * @return {@link List < Status>}
      *************************************************************************/
-    @GetMapping("/getAll/active")
-    public List<Status> getAllActive(@RequestParam int page, @RequestParam int pageSize) {
-        return service.getAll(true, PageRequest.of(page, pageSize));
+    @GetMapping("/getAll")
+    public List<Status> getAll(@RequestParam int page, @RequestParam int pageSize, @RequestParam Long userId) {
+        return service.getAll(userId, PageRequest.of(page, pageSize));
     }
 
 
