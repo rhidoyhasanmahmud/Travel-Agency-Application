@@ -11,7 +11,6 @@ import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import java.time.LocalDate;
 
 /**
  * The persistent class for the pmt_user database table.
@@ -41,7 +40,7 @@ public class User extends AbstractPersistableEntity {
     private String password;
 
     @Convert(converter = StringTrimConverter.class)
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     @NotNull
     @Email
     private String email;

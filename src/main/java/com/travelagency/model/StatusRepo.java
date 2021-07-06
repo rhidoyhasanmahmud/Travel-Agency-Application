@@ -7,4 +7,6 @@ import java.util.List;
 
 public interface StatusRepo extends JpaRepository<Status, Long> {
     List<Status> findAllByUser_IdOrderByIdDesc(Long userId, Pageable pageable);
+
+    List<Status> findByHavePrivacyAndUser_IdNot(Boolean havePrivacy, Long userId);
 }
