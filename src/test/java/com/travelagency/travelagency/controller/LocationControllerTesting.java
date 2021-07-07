@@ -4,7 +4,6 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import com.travelagency.model.Location;
-import com.travelagency.model.Status;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.http.MediaType;
@@ -28,8 +27,8 @@ public class LocationControllerTesting extends AbstractTest {
         int status = mvcResult.getResponse().getStatus();
         assertEquals(200, status);
         String content = mvcResult.getResponse().getContentAsString();
-        Location[] productlist = super.mapFromJson(content, Location[].class);
-        assertTrue(productlist.length > 0);
+        Location[] locationlist = super.mapFromJson(content, Location[].class);
+        assertTrue(locationlist.length > 0);
     }
 
     @Test
@@ -38,7 +37,7 @@ public class LocationControllerTesting extends AbstractTest {
         Location location = new Location();
         location.setId(1L);
         location.setName("Dhaka");
-        String inputJson = super.mapToJson();
+        String inputJson = super.mapToJson(location);
         MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.post(uri)
                 .contentType(MediaType.APPLICATION_JSON_VALUE)
                 .content(inputJson)).andReturn();
@@ -52,9 +51,9 @@ public class LocationControllerTesting extends AbstractTest {
     @Test
     public void updateLocation() throws Exception {
         String uri = "/location";
-        Location product = new Location();
-        product.setName("Dhaka 2");
-        String inputJson = super.mapToJson(product);
+        Location location = new Location();
+        location.setName("Dhaka 2");
+        String inputJson = super.mapToJson(location);
         MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.put(uri)
                 .contentType(MediaType.APPLICATION_JSON_VALUE)
                 .content(inputJson)).andReturn();
