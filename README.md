@@ -34,6 +34,7 @@ This project has following features-
 
 ![ER Diagram](https://github.com/CodeMechanix/Travel-Agency-Application/blob/master/erd/ER_Diagram.png)
 
+Note: Added Primary Attribute of An Entity in ERD
 
 ## API Details
 
