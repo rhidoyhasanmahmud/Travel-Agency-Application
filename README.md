@@ -29,6 +29,7 @@ This project has following features-
 - Location Master Data
 - JWT 
 - Global Exception Handling
+- Added a test case. not covered all test cases here. 
 
 ## ER Diagram
 
