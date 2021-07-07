@@ -30,6 +30,10 @@ This project has following features-
 - JWT 
 - Global Exception Handling
 
+## ER Diagram
+
+![ER Diagram](https://github.com/CodeMechanix/Travel-Agency-Application/blob/master/erd/ER_Diagram.png)
+
 
 ## API Details
 
