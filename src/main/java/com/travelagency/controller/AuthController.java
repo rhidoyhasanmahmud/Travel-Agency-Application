@@ -18,7 +18,6 @@ import javax.validation.Valid;
 @RestController
 @RequestMapping("/api/auth")
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
-@CrossOrigin(origins = "*", maxAge = 3600)
 public class AuthController {
 
     private final AuthService service;

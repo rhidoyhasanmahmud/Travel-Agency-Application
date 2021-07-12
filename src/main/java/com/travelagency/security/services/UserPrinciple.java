@@ -87,11 +87,11 @@ public class UserPrinciple implements UserDetails {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+    public boolean equals(Object ob) {
+        if (this == ob) return true;
+        if (ob == null || getClass() != ob.getClass()) return false;
         
-        UserPrinciple user = (UserPrinciple) o;
+        UserPrinciple user = (UserPrinciple) ob;
         return Objects.equals(id, user.id);
     }
 }

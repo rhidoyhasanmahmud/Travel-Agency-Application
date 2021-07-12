@@ -37,16 +37,12 @@ public class StatusService {
 
     public List<Status> getAll(PageRequest pageable, HttpServletRequest rq) {
         Claims claims = tokenProvider.extractAllClaims(rq);
-        System.out.println("Claim " + claims.get("username"));
         Long loggedUserId = Long.valueOf(claims.get("id").toString());
-        System.out.println("OK " + loggedUserId);
-
         List<Status> allStatus = new ArrayList<>();
 
         List<Status> loggedUserStatus = repo.findAllByUser_IdOrderByIdDesc(loggedUserId, pageable).stream().peek(ob -> {
             setMappingObjectVal(ob);
         }).collect(Collectors.toList());
-
         List<Status> allPublicStatus = repo.findByHavePrivacyAndUser_IdNot(true, loggedUserId).stream().peek(statusOb -> {
             setMappingObjectVal(statusOb);
         }).collect(Collectors.toList());

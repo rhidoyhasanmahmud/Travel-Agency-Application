@@ -1,10 +1,13 @@
 package com.travelagency.controller;
 
 import com.travelagency.model.Location;
+import com.travelagency.security.jwt.JwtProvider;
 import com.travelagency.service.LocationService;
+import io.jsonwebtoken.Claims;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -22,9 +25,9 @@ import java.util.Map;
 @RestController
 @RequestMapping("/api/location")
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
-@CrossOrigin(origins = "*", maxAge = 3600)
 public class LocationController {
     private final LocationService service;
+
 
     /*************************************************************************
      * Create a new  Location
@@ -65,8 +68,10 @@ public class LocationController {
      * @param id Id of a {@link  Location}
      * @return {@link  Location}
      *************************************************************************/
+
     @GetMapping("/get/{id}")
-    public Location getById(@PathVariable Long id) {
+    @PreAuthorize("@securityService.checkSecurity(#id, #rq)")
+    public Location getById(@PathVariable Long id, HttpServletRequest rq) {
         return service.getById(id);
     }
 
